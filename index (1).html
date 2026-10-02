@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuestra historia apenas comienza</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&family=Dancing+Script:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Barra de progreso de scroll -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- Corazones flotantes de fondo (se generan en JS) -->
+  <div class="floating-hearts" id="floatingHearts"></div>
+
+  <!-- 0. PANTALLA DE BIENVENIDA -->
+  <section id="welcome" class="screen dark">
+    <div class="stars"></div>
+    <div class="welcome-content">
+      <p class="pre-title">Tengo algo para ti…</p>
+      <h1 class="cursive">Así que quédate un momento.</h1>
+      <button id="enterBtn" class="btn-heart">♡ ENTRAR ♡</button>
+    </div>
+  </section>
+
+  <!-- contenido principal, oculto hasta entrar -->
+  <main id="mainContent" class="hidden">
+
+    <!-- 1. HERO -->
+    <section class="hero reveal">
+      <p class="deco">♡ ✦ ♡ ✦</p>
+      <h2 class="cursive">Hace 4 meses comenzó nuestra historia…</h2>
+      <div class="photo-frame">
+        <img id="heroPhoto" src="" alt="Nosotras" onerror="this.parentElement.classList.add('no-photo')" onload="this.parentElement.classList.remove('no-photo')">
+        <div class="placeholder-text">Aquí va nuestra foto favorita</div>
+      </div>
+      <p class="soft-text">y todavía me parece increíble que seas tú.</p>
+      <span class="date-tag" id="dateTag">02 • 06 • 2026</span>
+    </section>
+
+    <!-- 2. CONTADOR -->
+    <section class="counter-section reveal">
+      <h2 class="cursive">Y mira cuánto tiempo llevamos…</h2>
+      <div class="counter" id="counter">
+        <div class="c-box"><span id="cMonths">0</span><small>meses</small></div>
+        <div class="c-box"><span id="cDays">0</span><small>días</small></div>
+        <div class="c-box"><span id="cHours">0</span><small>horas</small></div>
+        <div class="c-box"><span id="cMinutes">0</span><small>minutos</small></div>
+        <div class="c-box"><span id="cSeconds">0</span><small>segundos</small></div>
+      </div>
+    </section>
+
+    <!-- 3. SI PUDIERA EXPLICARTE -->
+    <section class="explain-section light reveal">
+      <p class="fade-line">De todas las personas que podía encontrar…</p>
+      <p class="fade-line">qué bonito que la vida me haya llevado hasta ti.</p>
+      <p class="fade-line emphasis">De todas las historias que podía vivir, me alegra estar escribiendo esta contigo.</p>
+    </section>
+
+    <!-- 4. PEQUEÑOS MOMENTOS -->
+    <section class="moments-section reveal">
+      <h2 class="cursive">No son solo 4 meses…</h2>
+      <p class="subtitle">Son todas esas pequeñas cosas que hicieron que estos meses fueran nuestros.</p>
+      <div class="moments-grid">
+        <div class="moment-card"><span class="emoji">💗</span><p>Una risa contigo</p></div>
+        <div class="moment-card"><span class="emoji">💬</span><p>Una conversación hasta tarde</p></div>
+        <div class="moment-card"><span class="emoji">🤗</span><p>Un abrazo que necesitaba</p></div>
+        <div class="moment-card"><span class="emoji">📱</span><p>Un mensaje que me hizo sonreír</p></div>
+        <div class="moment-card"><span class="emoji">😂</span><p>Una tontería que solo nosotras entendemos</p></div>
+        <div class="moment-card"><span class="emoji">💖</span><p>Un momento que quiero guardar</p></div>
+      </div>
+    </section>
+
+    <!-- 5. GALERÍA -->
+    <section class="gallery-section reveal">
+      <h2 class="cursive">Nosotras</h2>
+      <div class="gallery" id="gallery"><!-- generado en JS --></div>
+    </section>
+
+    <!-- 6. NUESTRA CANCIÓN -->
+    <section class="song-section reveal">
+      <h2 class="cursive">Y si pudiera expresar lo que siento con una canción…</h2>
+      <div class="song-card">
+        <div class="eq" id="eq"><span></span><span></span><span></span><span></span></div>
+        <div class="song-info">
+          <p class="song-title" id="songTitle">🎵 Disfruto</p>
+          <p class="song-artist" id="songArtist">🎤 Carla Morrison</p>
+        </div>
+        <button id="playBtn" class="btn-play">♡ Reproducir</button>
+        <audio id="audio" loop></audio>
+      </div>
+    </section>
+
+    <!-- 7. 4 COSAS QUE AMO DE TI -->
+    <section class="love-section reveal">
+      <h2 class="cursive">4 cosas que probablemente casi no te digo</h2>
+      <div class="love-grid" id="loveGrid"><!-- generado en JS --></div>
+    </section>
+
+    <!-- 8. LA CARTA -->
+    <section class="letter-section reveal">
+      <p class="hint" id="letterHint">Hay algo que todavía no has abierto…</p>
+      <div class="envelope" id="envelope">
+        <div class="envelope-flap"></div>
+        <div class="envelope-body"><p>Para mi palomita ♡</p></div>
+      </div>
+      <button id="openLetterBtn" class="btn-heart">ABRIR MI CARTA</button>
+      <div class="letter hidden" id="letterText">
+        <p>Mi amor:</p>
+        <p>Hoy cumplimos 4 meses.</p>
+        <p>y todavia me parece increible pensar en todo lo que ha pasado desde aquel 14 de febrero, cuando empezamos a hablar a conocernos. que curioso que un dia que para muchos es san valentin, para mi termino comvirtiendose en la fecha en la que comenzo una de las historias mas vonitas de mi viada. </p>
+        <p>me encanta pensar que entre tantas personas, tantas historias y tantos caminos diferentes, la vida hizo que nuestros camninos se cruzaran.</p>
+        <p>tu, mi niña hermosa, con tu forma de ser, tus ocurrencias tus enojos de vez en cuando, tus habrazos, tus palabras, tu manera de mirarme, esas pequeñas cosas que haces que seas única para mí.</p>
+        <p>quiero que sepas que contigo he aprendido que amar no siempre significa tener todo perfecto, haveces significa aprender, hablar, pedir perdon, entendernos, reirnos despues de una bobada y siempre volver a habrazarnos. significa eleguirnos incluso en los dias no tan bonitos</p>
+        <p>a veces no se como explicarte todo lo que siento por ti. puede que no siempre encuentre las palabras correctas, o que no sea la persona mas experta demostrando todo lo que pasa por mi cabeza y mi corazon, pero hay algo que si tengo muy claro</p>
+        <p>te amo mucho, y me hace feliz saber que puedo llamarte mi novia.</p>
+        <p>si pudiera volver a ese 14 de febrero, sabiendo todo lo que se ahora, volveria a hacercarme a ti sin pensarlo dos veces.</p>
+        <p>porque volveria a escogerte.</p>
+        <p>volveria a escoger hablar contigo</p>
+        <p>volveria a escoger cada risa</p>
+        <p>volveria a escoger cada abrazo</p>
+        <p>volveria a escoger cada momento que hemos compartido</p>
+        <p>volveria a escoger cada historia que hemos escrito juntas</p>
+        <p>volveria a escoger cada aventura que hemos vivido</p>
+        <p>volveria a escoger cada mirada</p>
+        <p>volveria a escoger cada palabra</p>
+        <p>volveria a escoger cada beso</p>
+        <p>volveria a escogerte a ti</p>
+        <p class="signature">Felices 4 meses, mi niña bonita. ♡<br>recuerda que llenas de alegria mi vida cada dia.</p>
+      </div>
+    </section>
+
+    <!-- 9. LO QUE NOS FALTA VIVIR -->
+    <section class="future-section reveal">
+      <h2 class="cursive">Lo que todavía nos falta vivir</h2>
+      <div class="timeline">
+        <div class="t-item">4 meses — estamos Aquí ♡</div>
+        <div class="t-item">Nuestro próximo recuerdo: <p>Ese que todavía no sabemos que vamos a guardar para siempre</p></div>
+        <div class="t-item">Nuestra próxima aventura <p>Un lugar nuevo, una historia nueva y nosotras siendo nosotras.</p></div>
+        <div class="t-item">Más fotos <p>Para llenar la galería de momentos que algún día miraremos sonriendo.</p></div>
+        <div class="t-item">Más risas <p>De esas que empiezan por una bobada y terminan doliéndonos la barriga.</p></div>
+        <div class="t-item">Más historias <p>Porque si estos fueron apenas los primeros capítulos, todavía nos queda muchísimo por escribir. ♡</p></div>
+        <div class="t-item final"> Cuatro meses para recordar,
+pero una vida entera por imaginar;
+muchos lugares por conocer,
+muchas historias por recorrer
+y muchísimos momentos contigo por volver a vivir ♡</div>
+      </div>
+    </section>
+
+    <!-- 10. PREGUNTA FINAL -->
+    <section class="final-section dark">
+      <div class="stars"></div>
+      <p class="pre-title">Y antes de que te vayas…</p>
+      <h2 class="cursive" id="secretHeart">¿Seguimos escribiendo nuestra historia?</h2>
+      <p class="hearts-deco">♡ ♡</p>
+      <button id="finalBtn" class="btn-heart">♡ SÍ, CONTIGO ♡</button>
+      <div class="final-message hidden" id="finalMessage">
+        <p>Entonces este no es el final…</p>
+        <p class="cursive">Es apenas el comienzo. ♡</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Botones flotantes -->
+  <button id="musicToggle" class="float-btn music" title="Música">♪</button>
+  <button id="backToTop" class="float-btn top hidden" title="Subir">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
